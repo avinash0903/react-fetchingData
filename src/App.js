@@ -5,8 +5,8 @@ import ClassTable from './classtable';
 export default function App() {
   return (
     <div>
-      {/* <Table /> */}
-      <ClassTable />
+      <Table />
+      {/* <ClassTable /> */}
     </div>
   );
 }
