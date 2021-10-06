@@ -1,26 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import './style.css';
 
-function Table() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos/')
-      .then((res) => res.json())
-      .then((response) => {
-        setData(response);
-      });
-  }, []);
-
+function Table(props) {
+  const adduserhandler = (event) => {
+    event.preventDefault();
+  };
   return (
     <>
-      <div>
-        <strong>title</strong>
-      </div>
-      {data.map((d) => (
-        <div key={d.userId}>
-          <div>{d.title}</div>
-        </div>
-      ))}
+      <form onSubmit={adduserhandler}>
+        <label>name</label>
+        <input id="username" />
+        <label>age</label>
+        <input id="age" type="number" />
+        <button type="submit">Add User</button>
+      </form>
     </>
   );
 }
